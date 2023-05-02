@@ -42,7 +42,10 @@
 .slider-caption { margin-top: -20px; }
 
 .bg-color,
-.bg-color #header-wrap { background-color: #1E8C93 !important; }
+/* .bg-color #header-wrap { background-color: #1E8C93 !important; } */
+.bg-color #header-wrap { background-color: #000000 !important; }
+
+
 
 .bg-color .menu-item:hover > .menu-link,
 .bg-color .menu-item.current > .menu-link { color: #444 !important; }
