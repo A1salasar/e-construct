@@ -271,7 +271,7 @@ blockquote,
 address,
 table,
 fieldset,
-form { margin-bottom: 30px; }
+form { margin-bottom: 20px; }
 
 small { font-family: 'Lato', sans-serif; }
 
@@ -13616,7 +13616,7 @@ h3.titular-title { font-size: 2rem; }
 /* Heading Block - with Subtitle
 -----------------------------------------------------------------*/
 
-.heading-block { margin-bottom: 50px; }
+.heading-block { margin-bottom: 10px; }
 
 .heading-block h1,
 .heading-block h2,
