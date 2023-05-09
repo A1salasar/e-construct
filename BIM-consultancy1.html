@@ -11,10 +11,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Merriweather:wght@400;700&family=Material+Icons+Outlined&family=Material+Icons+Two+Tone&display=swap"
-		rel="stylesheet">
+	href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Merriweather:wght@400;700&family=Material+Icons+Outlined&family=Material+Icons+Two+Tone&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/dark.css" type="text/css" />
@@ -26,6 +28,9 @@
 	<link rel="stylesheet" href="css/law-firm.css" type="text/css" /> <!-- law-firm Custom Css -->
 	<link rel="stylesheet" href="css/fonts.css" type="text/css" /> <!-- law-firm Custom Fonts -->
 	<link rel="stylesheet" href="css/cards.css" type="text/css" />
+	<!-- <link rel="stylesheet" href="css/cards1.css"type="text/css"/	> -->
+	<link rel="stylesheet" href="css/nonprofit.css" type="text/css" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<!-- / -->
 
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
@@ -38,16 +43,47 @@
 	<title>Bim-Consultancy</title>
 
 	<style>
+		
+.ws{
+	word-spacing: 4px;
+}
+		
+		.heading-block::after {
+    content: '';
+    display: block;
+    margin-top: 0px;
+    width: 0px;
+    border-top: 2px solid #44444400;
+}
+		.last-section{
+			display: flex;
+			flex-direction: row;
+			padding: 5%;
+		}
+		.last-sec-icon{
+			color: grey;
+		}
+		.bottommargin {
+    margin-bottom: 1rem !important;
+		}
+		.bottommargin-lg {
+    margin-bottom: 3rem !important;
+		}
+		
+	
 		@media (min-width: 768px) {
-			.feature-box-border-horizontal .feature-box { position: relative; }
+			.feature-box-border-horizontal .feature-box {
+				position: relative;
+				
+			}
 
 			.feature-box-border-horizontal .feature-box:not(.noborder) .fbox-icon::before,
 			.feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
 				content: "";
 				position: absolute;
 				top: 31px;
-			    left: calc(50% + 32px);
-			    width: calc(100% - 64px);
+				left: calc(50% + 32px);
+				width: calc(100% - 64px);
 				height: 2px;
 				border: 1px solid #EEE;
 				z-index: 0;
@@ -68,7 +104,9 @@
 
 			/* .feature-box-border-horizontal .feature-box:not(.noborder):nth-child(1) .fbox-icon::before { background-color: #222; } */
 
-			.feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder):hover .fbox-icon::after {  width: calc(100% - 64px); }
+			.feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder):hover .fbox-icon::after {
+				width: calc(100% - 64px);
+			}
 
 
 			.feature-box-border-horizontal .fbox-icon i,
@@ -88,11 +126,11 @@
 
 		.dark .feature-box-border-horizontal .feature-box:not(.noborder) .fbox-icon::before,
 		.dark .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
-			border-color: rgba(255,255,255,0.1);
+			border-color: rgba(255, 255, 255, 0.1);
 		}
 
 		.dark .feature-box-border-horizontal.border-hover-animate .feature-box:not(.noborder) .fbox-icon::after {
-			border-color: rgba(255,255,255,0.6);
+			border-color: rgba(255, 255, 255, 0.6);
 		}
 
 		.dark .feature-box-border-horizontal .fbox-icon i,
@@ -100,6 +138,68 @@
 			box-shadow: 0 0 0px 8px #0E2A47;
 			background-color: #0b1e31;
 		}
+
+		
+		
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) {
+			border-bottom: none;
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li {
+			float: left;
+			border: 0;
+			height: auto;
+			text-align: center;
+		}
+
+		.block-tab-2.tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
+			border: 0;
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li a {
+			height: auto;
+			line-height: 1;
+			background-color: transparent;
+			font-size: 15px;
+			font-weight: 400;
+			padding: 0 0 20px 0;
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li a i {
+			display: block;
+			font-size: 42px;
+			margin: 0 0 17px 0;
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
+			top: 0;
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active i {
+			color: var(--danger, #16c5f1);
+		}
+
+		.block-tab-2 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a::after {
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			bottom: 0;
+			left: 50%;
+			margin-left: -3px;
+			border-radius: 50%;
+			background: var(--danger, #16c5f1);
+		}
+
+	.icon-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+      	
+		}
+
+		
 	</style>
 
 </head>
@@ -121,7 +221,7 @@
 
 							<ul class="menu-container">
 								<li class="menu-item current"><a class="menu-link" href="#"
-										style="padding-top: 39px; padding-bottom: 39px;">
+										style="padding-top: 39px; padding-bottom: 39px;" style="color: #0F317E;">
 										<div>Home</div>
 									</a></li>
 								<li class="menu-item"><a class="menu-link" href="#"
@@ -200,7 +300,7 @@
 		<!-- Content
 		============================================= -->
 		<section id="content">
-			<div class="content-wrap overflow-visible py-0" style="background-color: #e0e0e0;">
+			<div class="content-wrap overflow-visible py-0">
 				<div class="container">
 					<div class="service-feature w-100 mb-4 mt-5 mt-lg-0">
 
@@ -241,10 +341,10 @@
 
 					<div class="clear"></div>
 
-					<div class="row align-items-center justify-content-center mt-lg-0">
+					<div class="row align-items-center justify-content-center mt-5">
 						<div class="col-lg-5 col-10 px-5">
 							<div class="lady-justice-img position-relative">
-								<img src='./images/img2.jpg' alt="Image" class="rounded">
+							<img src='./images/img2.jpg' alt="Image" class="rounded">
 							</div>
 						</div>
 						<div class="col-lg-5 p-5">
@@ -270,136 +370,1571 @@
 
 				<section id="content">
 					<div class="content-wrap">
-						<div class="container">
-		
-							<div class="section dark rounded-5 px-5" style="background: #0E2A47 url('images/blocks/preview/svg-bg/shiny.svg') no-repeat center center; background-size: cover; padding-top: 100px;padding-bottom: 100px;">
+						<div class="container" data-aos="fade-up" data-aos-duration="200ms">
+
+							<div class="section dark rounded-5 px-5"
+								style="background: #5740ee url('./images/Shiny.svg') no-repeat center center; background-size: cover; padding-top: 100px;padding-bottom: 100px;">
 								<div class="row mb-5">
 									<div class="col-md-6">
-										<h2 class="display-4 fw-medium">Simple Steps How to use Canvas.</h2>
+										<h2 class="display-4 fw-bold" style="font-size: 40px;">BMI Process</h2>
 									</div>
 								</div>
-								<div class="row feature-box-border-horizontal border-0 border-dashed col-mb-50 justify-content-center">
-									<div class="col-md-4">
+								<div
+									class="row feature-box-border-horizontal border-0 border-dashed col-mb-50 justify-content-center">
+									<div class="col-md-3" data-aos="fade-left" data-aos-duration="200">
 										<div class="feature-box flex-column">
+											<img src="images/progress.png" alt="Relax Icon" class="progress-img"
+												style="width: 89%;">
 											<div class="fbox-icon mb-5">
-												<a href="#"><i class="bg-danger">1</i></a>
+												<a href="#"><i class="bg-danger" style="height: 62px; width: 62px;">1</i></a>
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott text-larger mb-2">Choose your Plan</h3>
-												<p class="lead text-white-50">Lorem ipsum dolor adipisicing elit.</p>
-												<a href="#" class="button button-small bg-danger button-rounded border-width-1 ms-0 mt-4">Get Started <i class="icon-angle-right me-0"></i></a>
+												<h3 class="nott text-larger mb-2">Plan</h3>
+												<p class="lead text-white-100 ws" style="font-size: 15px;">Inform project planning by combining
+													reality
+													capture and real-world data to generate context models of the
+													existing
+													built and natural environment.</p>
+												<!-- <a href="#" class="button button-small bg-danger button-rounded border-width-1 ms-0 mt-4">Get Started <i class="icon-angle-right me-0"></i></a> -->
 											</div>
 										</div>
 									</div>
-		
-									<div class="col-md-4">
+
+									<div class="col-md-3" data-aos="fade-left" data-aos-duration="400" >
 										<div class="feature-box flex-column">
+											<img src="images/progress.png" alt="Relax Icon" class="progress-img"
+												style="width: 89%;">
 											<div class="fbox-icon mb-5">
-												<a href="#"><i>2</i></a>
+												<a href="#"><i style="height: 62px; width: 62px;">2</i></a>
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott text-larger mb-2">Select your Demo</h3>
-												<p class="lead text-white-50">Synergistically matrix tactical sources.</p>
+												<h3 class="nott text-larger mb-2">Design</h3>
+												<p class="lead text-white-100 ws" style="font-size: 15px;">During this phase, conceptual design,
+													detailing and documentation are performed. The preconstruction
+													process
+													begins using BIM data to inform scheduling and logistics.</p>
 											</div>
 										</div>
 									</div>
-		
-									<div class="col-md-4">
+
+									<div class="col-md-3" data-aos="fade-left" data-aos-duration="500" >
+										<div class="feature-box flex-column">
+											<img src="images/progress.png" alt="Relax Icon" class="progress-img"
+												style="width: 89%;">
+											<div class="fbox-icon mb-5">
+												<a href="#"><i style="height: 62px; width: 62px;">3</i></a>
+											</div>
+											<div class="fbox-content">
+												<h3 class="nott text-larger mb-2">Build</h3>
+												<p class="lead text-white-100 ws" style="font-size: 15px;">During this phase, fabrication begins
+													using
+													BIM specifications. Project construction logistics are shared with
+													trades and contractors to ensure optimum timming and efficiency.</p>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="col-md-3" data-aos="fade-left" data-aos-duration="600">
 										<div class="feature-box flex-column noborder">
+											<img src="images/progress.png" alt="Relax Icon" class="progress-img"
+												style="width: 89%;">
 											<div class="fbox-icon mb-5">
-												<a href="#"><i>3</i></a>
+												<a href="#"><i style="height: 62px; width: 62px;">4</i></a>
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott text-larger mb-2">Finish your Project</h3>
-												<p class="lead text-white-50">Distinctively drive best practices.</p>
+												<h3 class="nott text-larger mb-2" >Operate</h3>
+												<p class="lead text-white-100 ws"style="font-size: 15px;">BIM data carries over to operations and
+													maintenace of finished assets. BIM data can be used down the road
+													for
+													cost-effective renovation or efficient decontruction too.</p>
 											</div>
 										</div>
 									</div>
-		
+
+
 								</div>
 							</div>
-		
+
+						</div>
+					</div>
+				</section>
+				<section id="content">
+					<div class="content-wrap" style="padding:10px;">
+						<div class="container mw-md">
+							<h2 class="text-center" class="h1 fw-bold lh-sm" style="font-size: 40px;">Industries We
+								Serve</h2>
+							<div class="tabs block-tab-2 tabs-alt tabs-responsive tabs-justify" id="tab">
+								<ul class="tab-nav">
+									<li><a href="#tabs-1"><i class="bi-house-door display-5"></i>Architecture</a></li>
+									<li><a href="#tabs-2"><i class="icon-building2 display-5"></i>Civil</a></li>
+									<!-- <li><a href="#tabs-3"><img src="./images/construction.png" class="icon-building2 display-5"></img>Construction</a></li> -->
+								 <li><a href="#tabs-3"><i class="icon-truck1 display-5"></i>Construction</a></li>
+									<li><a href="#tabs-4"><i class="icon-industry display-5"></i>Plant</a></li>
+									<li><a href="#tabs-5"><i class="bi-diagram-3 display-5"></i>MEP</a></li>
+									<li><a href="#tabs-6"><i class="bi-building"></i>Structure</a></li>
+								</ul>
+
+						<div class="tab-container mt-4">
+									<div class="tab-content" id="tabs-1">
+										<div class="row col-mb-30">
+											<div class="col-md-7">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery" style="height:300px;">
+													<a href="./images/Arc1.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 300px"></a>
+													<a href="./images/Arc2.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc3.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc4.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc5.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc6.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc7.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc8.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc9.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc10.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc11.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc12.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc13.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arch14.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc15.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc16.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc17.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc18.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc19.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc20.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc21.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc22.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc23.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc24.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc25.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc26.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc27.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc28.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc29.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc30.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc31.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc32.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc33.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc34.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc35.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc36.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc37.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/Arc38.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<!-- </div> -->
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>Architecture</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Concept Design:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves working
+														with the client to develop an initial design
+														concept for the
+														project, which includes the overall look and feel of the
+														building, the layout of the space, and
+														other key elements.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Feasibility Studies:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														assessing the viability of a project and identifying
+														any potential
+														risks or obstacles that may need to be addressed.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Site Analysis:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves studying
+														the site where the project will be located
+														and identifying any
+														relevant factors that may need to be taken into account in the
+														design process, such as local
+														regulations, environmental conditions, and topography.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Design Development:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves refining
+														the initial design concept and developing
+														detailed
+														plans and specifications for the project, including floor plans,
+														elevations, sections, and other key
+														documents.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-content" id="tabs-2">
+										<div class="row col-mb-30 flex-row-reverse">
+											<div class="col-md-7" style="height:400px;">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery">
+													<a href="./images/civ1.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 300px"></a>
+													<a href="./images/civ2.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ3.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ4.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ5.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ6.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ7.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ8.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ9.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ10.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ11.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ12.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ13.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ14.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ15.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ16.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ17.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ18.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ19.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ20.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ21.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ22.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ23.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/civ24.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>Civil</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Design and Engineering:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														designing and engineering infrastructure projects, including
+														structural
+														analysis, environmental impact studies, and geotechnical
+														investigations.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Construction Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														overseeing the construction process from start to finish,
+														including managing
+														the budget, schedule, and quality of work.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Project Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the overall project, including coordinating with stakeholders,
+														managing
+														budgets and schedules, and ensuring that the project is
+														completed on time and within budget.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Land Development:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														developing land for residential, commercial, or industrial use,
+														including site
+														planning, zoning, and subdivision planning.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Construction Materials Testing:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves testing
+														construction materials, such as concrete and asphalt, to ensure
+														that they meet quality standards and can withstand the demands
+														of the project.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-content" id="tabs-3">
+										<div class="row col-mb-30 ">
+											<div class="col-md-7">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery" style="height: 632px;">
+													<a href="./images/cons1.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 600px"></a>
+													<a href="./images/cons2.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons3.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons4.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons5.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons6.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons7.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons8.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons9.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons10.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons11.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons12.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons13.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons14.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons15.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons16.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons17.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons18.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons19.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons20.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons21.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons22.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons23.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons24.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons25.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons26.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons27.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/cons28.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>Construction</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Pre-Construction Services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves working
+														with the client to develop the project scope, budget, and
+														schedule, as well as obtaining necessary permits
+														and approvals.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Design-Build Services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the entire construction process, from design to construction,
+														and delivering the project to the client as a
+														turnkey solution.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															General Contracting:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the construction process by hiring subcontractors, managing the
+														project schedule and budget, and overseeing
+														the work of all parties involved in the project.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Construction Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														overseeing the construction process on behalf of the owner,
+														including managing the project schedule, budget, and
+														quality of work.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Project Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the overall project, including coordinating with stakeholders,
+														managing budgets and schedules, and ensuring
+														that the project is completed on time and within budget.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Building Information Modelling (BIM):
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves creating
+														a 3D model of the building that can be used to simulate and
+														analyze various aspects of the
+														design, including energy use, lighting, and acoustics.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Sustainable Construction:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														designing and building buildings that are environmentally
+														sustainable and energy-efficient.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Interior Fit-Out:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														designing and building the interior spaces of buildings,
+														including partitions, ceilings, flooring, and finishes.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Renovation and Remodeling:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														renovating and remodeling existing buildings to improve their
+														functionality and aesthetics.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Safety and Quality Control:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves ensuring
+														that all work on the construction site is performed safely and
+														according to industry quality standards,
+														including conducting safety inspections, providing safety
+														training, and implementing quality control processes.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-content" id="tabs-4">
+										<div class="row col-mb-30 flex-row-reverse">
+											<div class="col-md-7">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery">
+													<a href="./images/pla1.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 600px"></a>
+													<a href="./images/pla2.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/pla3.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/pla4.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/pla5.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/pla6.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>Plant</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Engineering and Design:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														designing and engineering industrial plants, including process
+														flow diagrams, piping and instrumentation diagrams,
+														and equipment specifications.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Procurement and Material Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the procurement and delivery of materials, equipment, and
+														supplies needed for the
+														construction and operation of industrial plants.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Construction Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														overseeing the construction process, including managing
+														subcontractors, managing the project schedule and
+														budget, and ensuring compliance with safety and quality
+														standards.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Project Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves managing
+														the overall project, including coordinating with stakeholders,
+														managing budgets and schedules, and ensuring
+														that the project is completed on time and within budget.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Plant Maintenance:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														maintaining and repairing industrial plants, including
+														preventative maintenance, emergency repairs, and facility
+														upgrades.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Plant Commissioning and Start-Up:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves testing
+														and commissioning the plant's systems and equipment to ensure
+														they are working properly before
+														the plant is put into operation.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Environmental Compliance and Permitting:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves ensuring
+														compliance with environmental regulations and obtaining
+														necessary permits and
+														approvals for industrial plants.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Automation and Control Systems:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														designing and installing automation and control systems to
+														improve plant efficiency, productivity, and safety.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Industrial Process Optimization:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														optimizing industrial processes to improve efficiency, reduce
+														waste, and increase productivity.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Health and Safety Management:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														implementing health and safety programs to ensure a safe working
+														environment for employees and
+														compliance with relevant regulations and standards.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-content" id="tabs-5">
+										<div class="row col-mb-30">
+											<div class="col-md-7">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery" style="height:400px;">
+													<a href="./images/MEP1.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 420px"></a>
+													<a href="./images/MEP2.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP3.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP4.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP5.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP6.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP7.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP8.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP9.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP10.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP11.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP12.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP13.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP14.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP15.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP16.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP17.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP18.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP19.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP20.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP21.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP22.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP23.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP24.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP25.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP26.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP27.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP28.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP29.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP30.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP31.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP32.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/MEP33.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>MEP</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Mechanical services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes heating,
+														ventilation, and air conditioning (HVAC) systems, as well as
+														other mechanical systems such as fire suppression
+														systems, elevators, and escalators.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Electrical services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design, installation, and maintenance of electrical systems,
+														including power distribution, lighting, and communication
+														systems.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Plumbing services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design, installation, and maintenance of plumbing systems, such
+														as water supply and drainage systems, and sewage
+														treatment systems.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Fire protection services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design, installation, and maintenance of fire suppression and
+														detection systems, such as sprinklers, alarms, and
+														smoke detectors.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Energy management services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design and implementation of energy-efficient systems and the
+														optimization of existing systems to reduce
+														energy consumption and improve building performance.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Building automation systems:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design, installation, and maintenance of systems that automate
+														building functions, such as lighting, HVAC,
+														and security systems.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Sustainability services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design and implementation of sustainable building practices,
+														such as green building design, renewable energy
+														systems, and waste reduction strategies.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-content" id="tabs-6">
+										<div class="row col-mb-30 flex-row-reverse">
+											<div class="col-md-7">
+												<!-- <img src="./images/img6.jpg" alt="Images"> -->
+												<div data-lightbox="gallery" style="height:300px;">
+													<a href="./images/str1.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01)), url('./images/img6.jpg') no-repeat center center / cover; height: 420px"></a>
+													<a href="./images/str2.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str3.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str4.jpg" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str5.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str6.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str7.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str8.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str9.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str10.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str11.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str12.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str13.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str14.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str15.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str16.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str17.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str18.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str19.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str20.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str21.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str22.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str23.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str24.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+													<a href="./images/str25.png" data-lightbox="gallery-item"
+														class="shadow-sm d-flex align-items-center justify-content-center play-video rounded position-relative bg-color mt-3 clearfix"
+														style="background: linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.01))"></a>
+
+
+
+
+												</div>
+											</div>
+											<div class="col-md-5">
+												<h3>Structure</h3>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Structural design services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This includes the
+														design of building structures, such as beams, columns, slabs,
+														and foundations, using various construction
+														materials like steel, concrete, timber, and masonry.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Structural analysis services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves the
+														analysis of building structures to determine their stability and
+														safety, using various techniques such as finite
+														element analysis, computer modeling, and simulation.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Building inspection services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														conducting inspections of existing building structures to assess
+														their condition and identify any structural issues
+														that may require repair or renovation.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Feasibility studies:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														conducting feasibility studies to determine the viability of a
+														proposed building project, including site analysis, structural
+														design, and cost estimation.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Construction supervision services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														providing construction supervision services to ensure that the
+														building structures are constructed according
+														to the design specifications and meet the required safety
+														standards.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Retrofitting and rehabilitation services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves
+														providing retrofitting and rehabilitation services for existing
+														buildings to upgrade their structural integrity
+														and safety.</div>
+												</div>
+												<div class="toggle faq pb-3 mb-3 faq-marketplace faq-authors">
+													<div class="toggle-header">
+														<div class="toggle-icon">
+															<i class="toggle-closed icon-comments-alt"></i>
+															<i class="toggle-open icon-comments-alt"></i>
+														</div>
+														<div class="toggle-title ps-1">
+															Seismic design services:
+														</div>
+														<div class="toggle-icon">
+															<i
+																class="toggle-closed icon-line-chevron-down text-dark-50"></i>
+															<i
+																class="toggle-open icon-line-chevron-up text-dark-50"></i>
+														</div>
+													</div>
+													<div class="toggle-content text-dark-50 ps-4">This involves the
+														design of building structures to resist seismic forces,
+														including the selection of appropriate materials and the
+														implementation of seismic-resistant design strategies.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</section><!-- #content end -->
 
-				<div class="section my-0 dark py-6" style="background-color: #000;">
-					<div class="container">
-						<div class="row justify-content-between align-items-center">
-							<div class="col-lg-6 align-self-center mb-6">
-								<h3 class="h2 font-secondary fw-bold mb-4 lh-base">Industries We Serve</h3>
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="featuredPropBox">
-											<ul>
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-home display-5"></i></div>
-														<div class="fptext">
-															<i class="icon-home display-5"></i>
-															<p>Architecture</p>
-														</div>
-													</a> </li>
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-concierge-bell display-5"></i></div>
-														<div class="fptext">
-															<i class="icon-concierge-bell display-5"></i>
-															<p>Civil</p>
-														</div>
-													</a> </li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="featuredPropBox">
-											<ul>
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-archway display-5"></i></div>
-														<div class="fptext">
-															<i class="icon-archway display-5"></i>
-															<p>onstruction</p>
-														</div>
-													</a> </li>
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-connection-empty display-5"></i></div>
-														<div class="fptext">
-															<i class="icon-connection-empty display-5"></i>
-															<p>Plant</p>
-														</div>
-													</a> </li>		
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-12">
-										<div class="featuredPropBox">
-											<ul>				
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-line-git-pull-request display-5"></i>
-														</div>
-														<div class="fptext">
-															<i class="icon-line-git-pull-request display-5"></i>
-															<p>MEP</p>
-														</div>
-													</a> </li>
-												<li> <a href="#">
-														<div class="fplogo"><i class="icon-building2 display-5"></i></div>
-														<div class="fptext">
-															<i class="icon-building2 display-5"></i>
-															<p>Structures</p>
-														</div>
-													</a> </li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-7 mx-auto">
-								<img src='./images/img5.jpg' alt="Image">
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<div class="container mw-md">
+				<!--<div class="container mw-md">
 					<div class="position-relative p-5 mb-4 z-3 rounded shadow bg-white service-feature mt-5 mt-lg-0">
 						<div class="row align-items-center justify-content-center grid-border">
 							<div class="col-lg-4 text-center mb-5 mb-lg-0">
@@ -422,77 +1957,76 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
+				</div>-->
+				<div style="background-color: #e3e3e354;">
 				<div class="container topmargin bottommargin-lg">
 					<div class="heading-block center mx-auto" style="max-width: 700px">
-						<h2 class="mb-2 nott ls0">Our BIM Consulting services include</h2>
-					</div>
+						<h2 class="h1 fw-bold lh-sm" style="padding-top: 4rem;font-size: 30px;">Our BIM Consulting Services include</h2>					</div>
 					<div class="clear"></div>
 					<div class="row col-mb-50 mt-3">
 						<div class="col-lg-4 center order-lg-last">
-							<img src='./images/img4.jpg' alt="Cleaner" width="400" height="350">
+							<img src='./images/img4.jpg' alt="Cleaner" width="400" height="390">
 							<small class="d-block tright"></small>
 						</div>
 
-						<div class="col-lg-4 col-md-6 pb-0">
+						<div class="col-lg-4 col-md-6" style="padding:15px;">
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class= "card last-section feature-box fbox-plain bottommargin"  data-aos="fade-right" data-aos-duration="100">
+								<div class="">
 									<i class="icon-check display-5"></i>
 								</div>
-								<div class="fbox-content">
-									<p>Purpose, evaluation and Feasibility study to find correct approach to BIM</p>
+								<div class="fbox-content" >
+									<p style="font-weight: 600;color: #212529;">Purpose, evaluation and Feasibility study to find correct approach to BIM</p>
 								</div>
 							</div>
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class= "card last-section feature-box fbox-plain bottommargin"  data-aos="fade-right" data-aos-duration="100">
+								<div class="">
 									<i class="icon-users1 display-5"></i>
 								</div>
 								<div class="fbox-content">
-									<p>prepare detailed proposal for strategic reporting to client and officals</p>
+									<p style="font-weight: 600;color: #212529;">prepare detailed proposal for strategic reporting to client and officals</p>
 								</div>
 							</div>
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class= "card last-section feature-box fbox-plain bottommargin"  data-aos="fade-right" data-aos-duration="100">
+								<div class="">
 									<i class="icon-building2 display-5"></i>
 								</div>
 								<div class="fbox-content">
-									<p>BIM llibraries creation for structural & MEP engineers and architects</p>
+									<p style="font-weight: 600;color: #212529;">BIM libraries creation for structural & MEP engineers and architects</p>
 								</div>
 							</div>
 
 						</div>
 
 
-						<div class="col-lg-4 col-md-6">
+						<div class="col-lg-4 col-md-6" style="padding:15px;">
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class="card last-section feature-box fbox-plain bottommargin" data-aos="fade-left" data-aos-duration="100">
+								<div class="">
 									<i class="icon-time display-5"></i>
 								</div>
 								<div class="fbox-content">
-									<p>Managing time and cost with BIM turnaround solutions</p>
+									<p style="font-weight: 600;color: #212529;">Managing time and cost with BIM turnaround solutions</p>
 								</div>
 							</div>
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class="card last-section feature-box fbox-plain bottommargin" data-aos="fade-left" data-aos-duration="100">
+								<div class="">
 									<i class="icon-file-settings display-5"></i>
 								</div>
 								<div class="fbox-content">
-									<p>Implementing bim Strategies for complex projects</p>
+									<p style="font-weight: 600;color: #212529;">Implementing bim Strategies for complex projects</p>
 								</div>
 							</div>
 
-							<div class="feature-box fbox-plain bottommargin">
-								<div class="fbox-icon">
+							<div class="card last-section feature-box fbox-plain bottommargin" data-aos="fade-left" data-aos-duration="100">
+								<div class="">
 									<i class="icon-signal1 display-5"></i>
 								</div>
 								<div class="fbox-content">
-									<p>Avail BIM automation and analytics solutions</p>
+									<p style="font-weight: 600;color: #212529;">Avail BIM automation and analytics solutions</p>
 								</div>
 							</div>
 
@@ -502,63 +2036,62 @@
 				</div>
 
 				<div class="clear"></div>
-				
+
 			</div>
 		</section><!-- #content end-->
 
-				<!-- Footer
+		<!-- Footer
 		============================================= -->
-				<footer id="footer" class="bg-color dark border-warning">
-					<div class="container">
+		<footer id="footer" class="bg-color dark border-warning">
+			<div class="container">
 
-						<!-- Footer Widgets
+				<!-- Footer Widgets
 				============================================= -->
-						<div class="footer-widgets-wrap">
+				<div class="footer-widgets-wrap">
 
-							<div class="row col-mb-50">
-								<div class="col-lg-5 col-sm-6">
+					<div class="row col-mb-50">
+						<div class="col-lg-5 col-sm-6">
 
-									<div class="widget clearfix">
+							<div class="widget clearfix">
 
-										<h5 class="mb-2 h6"><i
-												class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">share_location</i>Headquarters:
-										</h5>
-										<address class="ms-4 ps-3 font-secondary text-warning">
-											795 Folsom Ave, Suite 600<br>
-											San Francisco, CA 94107<br>
-										</address>
+								<h5 class="mb-2 h6"><i
+										class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">share_location</i>Headquarters:
+								</h5>
+								<address class="ms-4 ps-3 font-secondary text-warning">
+									795 Folsom Ave, Suite 600<br>
+									San Francisco, CA 94107<br>
+								</address>
 
-										<h5 class="mb-3 h6"><i
-												class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">schedule</i>Mon
-											- Fri: 10:00 - 18:00</h5>
-										<h5 class="mb-3 h6"><i
-												class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">call</i>+01
-											234 5678</h5>
-										<h5 class="mb-0 h6"><i
-												class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">alternate_email</i>noreply@canvas.com
-										</h5>
+								<h5 class="mb-3 h6"><i
+										class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">schedule</i>Mon
+									- Fri: 10:00 - 18:00</h5>
+								<h5 class="mb-3 h6"><i
+										class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">call</i>+01
+									234 5678</h5>
+								<h5 class="mb-0 h6"><i
+										class="material-icons-outlined h5 text-warning mb-0 align-middle me-3">alternate_email</i>noreply@canvas.com
+								</h5>
 
-									</div>
-								</div>
-								<div class="col-lg-2 col-sm-6">
-									<div class="widget widget_links clearfix">
+							</div>
+						</div>
+						<div class="col-lg-2 col-sm-6">
+							<div class="widget widget_links clearfix">
 
-										<h4>Blogroll</h4>
+								<h4>Blogroll</h4>
 
-										<ul class="">
-											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
-											<li><a
-													href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
-											</li>
-											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
-											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
-											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
-										</ul>
+								<ul class="">
+									<li><a href="https://codex.wordpress.org/">Documentation</a></li>
+									<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
+									</li>
+									<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
+									<li><a href="https://wordpress.org/support/">Support Forums</a></li>
+									<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
+								</ul>
 
-									</div>
-								</div>
+							</div>
+						</div>
 
-								<!-- <div class="col-lg-2 col-6">
+						<!-- <div class="col-lg-2 col-6">
 									<div class="widget widget_links clearfix">
 
 										<h4>Supports</h4>
@@ -573,70 +2106,75 @@
 									</div>
 								</div> -->
 
-								<div class="col-lg-2 col-6">
-									<div class="widget widget_links clearfix widget-li-noicon">
+						<div class="col-lg-2 col-6">
+							<div class="widget widget_links clearfix widget-li-noicon">
 
-										<ul>
-											<li><a href="#" class="d-flex align-items-center"><i
-														class="icon-facebook-square h5 text-warning mb-0 me-3"></i>
-													Facebook</a></li>
-											<li><a href="#" class="d-flex align-items-center"><i
-														class="icon-instagram2 h5 text-warning mb-0 me-3"></i>
-													Instagram</a></li>
-											<li><a href="#" class="d-flex align-items-center"><i
-														class="icon-twitter-sign h5 text-warning mb-0 me-3"></i>
-													Twitter</a></li>
-											<li><a href="#" class="d-flex align-items-center"><i
-														class="icon-envelope h5 text-warning mb-0 me-3"></i> Gmail</a>
-											</li>
-										</ul>
-
-									</div>
-								</div>
+								<ul>
+									<li><a href="#" class="d-flex align-items-center"><i
+												class="icon-facebook-square h5 text-warning mb-0 me-3"></i>
+											Facebook</a></li>
+									<li><a href="#" class="d-flex align-items-center"><i
+												class="icon-instagram2 h5 text-warning mb-0 me-3"></i>
+											Instagram</a></li>
+									<li><a href="#" class="d-flex align-items-center"><i
+												class="icon-twitter-sign h5 text-warning mb-0 me-3"></i>
+											Twitter</a></li>
+									<li><a href="#" class="d-flex align-items-center"><i
+												class="icon-envelope h5 text-warning mb-0 me-3"></i> Gmail</a>
+									</li>
+								</ul>
 
 							</div>
-
-						</div><!-- .footer-widgets-wrap end -->
+						</div>
 
 					</div>
 
-					<!-- Copyrights
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
 			============================================= -->
-					<div id="copyrights">
-						<div class="container">
+			<div id="copyrights">
+				<div class="container">
 
-							<div class="row col-mb-30 align-items-center">
+					<div class="row col-mb-30 align-items-center">
 
-								<div class="col-md-6 text-center text-md-start">
-									Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
-								</div>
-
-								<div class="col-md-6 text-center text-md-end">
-									<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy
-											Policy</a></div>
-								</div>
-
-							</div>
-
+						<div class="col-md-6 text-center text-md-start">
+							Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
 						</div>
-					</div><!-- #copyrights end -->
-				</footer><!-- #footer end -->
 
-			</div><!-- #wrapper end -->
+						<div class="col-md-6 text-center text-md-end">
+							<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy
+									Policy</a></div>
+						</div>
 
-			<!-- Go To Top
+					</div>
+
+				</div>
+			</div><!-- #copyrights end -->
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
 	============================================= -->
-			<div id="gotoTop" class="icon-line-chevrons-up rounded-circle"></div>
+	<div id="gotoTop" class="icon-line-chevrons-up rounded-circle"></div>
 
-			<!-- JavaScripts
+	<!-- JavaScripts
 	============================================= -->
-			<script src="js/jquery.js"></script>
-			<script src="js/plugins.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	  </script>
 
 
-			<!-- Footer Scripts
+
+	<!-- Footer Scripts
 	============================================= -->
-			<script src="js/functions.js"></script>
+	<script src="js/functions.js"></script>
 
 </body>
 
