@@ -259,7 +259,7 @@ h2 > span:not(.nocolor):not(.badge),
 h3 > span:not(.nocolor):not(.badge),
 h4 > span:not(.nocolor):not(.badge),
 h5 > span:not(.nocolor):not(.badge),
-h6 > span:not(.nocolor):not(.badge) { color: #1ABC9C; }
+h6 > span:not(.nocolor):not(.badge) { color: #3b3b3b; }
 
 p,
 pre,
@@ -400,7 +400,7 @@ span.middot {
 }
 
 .bg-color,
-.bg-color #header-wrap { background-color: #1ABC9C !important; }
+.bg-color #header-wrap { background-color: #555 !important; }
 
 .color { color: #0a0a0a !important; }
 
